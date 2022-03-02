@@ -17,13 +17,13 @@ def casier(user_inp):
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
-			for n in range(len(all_items)):
+			for n in range(len(promotional_items)):
 				if inp == promotional_items[n]["item"]:
 					print("available with price : ",promotional_items[n]["harga"])
 		
 		else:
 			print("there is no such options !!!")
-	except NameError as err:
+	except NameError, ValueError as err:
 		print("your error : ", err)
 		
 	
