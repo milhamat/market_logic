@@ -9,5 +9,19 @@ promotional_items = [{"item":"susu", "harga":50000},
 #print(all_items[0]["item"])
 
 def casier(user_inp):
+	try:
+		if user_inp.lower() == "all items":
+			inp = input("input your order : ").lower()
+		
+		else if user_inp.lower() == "promotional items":
+			inp = input("input your order : ").lower()
+		
+		else:
+			print("there is no such options !!!")
+		
 	
-	if user_inp.lower() == ""
+		
+
+
+init = input("item : ")
+casier(init)
