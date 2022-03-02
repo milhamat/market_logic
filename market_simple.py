@@ -14,6 +14,7 @@ usr_item = []
 totl_sem = []
 price = []
 
+
 def get_price():
 	val = []
 	idx = []
@@ -47,7 +48,6 @@ def recipt(total):
 	for n in range(len(num)):
 		print(num[n] + ' ' + usr_item[n] + '-> Rp.',totl_sem[n])
 		
-	
 
 def casier(user_inp):
 	global num, usr_item, price, totl_sem
