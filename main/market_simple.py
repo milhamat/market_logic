@@ -111,8 +111,8 @@ def casier(user_inp):
 
 		else:
 			print("there is no such options !!!")
-	except (NameError, ValueError) as err:
-		print("your error : ", err)
+	except (NameError, ValueError, IndexError) as err:
+		print("\nyour error : ", err)
 		
 	
 print("           !!!----------instruction----------!!!")
