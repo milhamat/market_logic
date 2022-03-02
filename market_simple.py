@@ -37,7 +37,7 @@ def total(calc):
 	
 
 def recipt(total):
-	print("Total harga: Rp.", total)
+	print("\nTotal harga: Rp.", total)
 	print("Detail: ")
 	for n in range(len(num)):
 		print(num[n] + ' ' + usr_item[n] + '-> Rp.',price[n])
@@ -66,12 +66,8 @@ def casier(user_inp):
 					usr_item.append(n)
 			
 			price = get_price()
-			print(price)
-			print(num)
 			rslt = calcu(price)
-			print(rslt)
 			totl = total(rslt)
-			print(totl)
 			recipt(totl)
 			
 		
@@ -81,16 +77,28 @@ def casier(user_inp):
 			for char in rm_spc_car:
 				inp = inp.replace(char, "")
 				
+			order = inp.split()
+			for n in order:
+				if n.isdigit():
+					num.append(n)
+				elif n in item_2:
+					usr_item.append(n)
 			
-			
+			price = get_price()
+			rslt = calcu(price)
+			totl = total(rslt)
+			recipt(totl)
+				
+
 		else:
 			print("there is no such options !!!")
 	except (NameError, ValueError) as err:
 		print("your error : ", err)
 		
 	
-print("instruction!!")
-print("option: ")
+print("           !!!----------instruction----------!!!")
+print("note: type 'all items' or 'promotion items' on the item input ")
+print("\noption: ")
 print("- all items")
 print("- promotional items")
 init = input("\nitem : ")
