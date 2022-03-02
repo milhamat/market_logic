@@ -28,6 +28,13 @@ def calcu(price):
 	return result
 	
 
+def total(calc):
+	tot = 0
+	for n in range(len(calc)):
+		tot+=int(calc[n])
+	return tot
+	
+
 def casier(user_inp):
 	global num, usr_item
 	rm_spc_car = ","
@@ -53,6 +60,8 @@ def casier(user_inp):
 			print(num)
 			rslt = calcu(price)
 			print(rslt)
+			totl = total(rslt)
+			print(totl)
 			
 		
 		elif user_inp.lower() == "promotional items":
