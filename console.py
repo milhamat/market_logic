@@ -1,8 +1,16 @@
 import data as dt
+from Market import market
 from dataExtract import extract
 
-data1 = extract(dt.all_items, 1)
-data2 = extract(dt.all_items, 2)
+all_itmB = extract(dt.all_items, 1)
+all_itmH = extract(dt.all_items, 2)
+promoB = extract(dt.promotional_items, 1)
+promoH = extract(dt.promotional_items, 2)
 
-print(data1)
-print(data2)
+print("           !!!----------instruction----------!!!")
+print("note: type 'all items' or 'promotion items' on the item input ")
+print("\noption: ")
+print("- all items")
+print("- promotional items")
+init = input("\nitem : ")
+market.casier(init)

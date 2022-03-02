@@ -72,8 +72,8 @@ def casier(user_inp):
 					usr_item.append(n)
 			
 			price = get_price()
-			print(price)
-			print(num)
+			#print(price)
+			#print(num)
 			rslt = calcu(price)
 			totl_sem = rslt
 			totl = total(rslt)
@@ -111,5 +111,5 @@ print("note: type 'all items' or 'promotion items' on the item input ")
 print("\noption: ")
 print("- all items")
 print("- promotional items")
-init = input("\nitem : ")
+init = input("\nuser input : ")
 casier(init)
