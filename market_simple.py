@@ -11,7 +11,6 @@ item_2 = ['susu', 'masker']
 num = []
 usr_item = []
 
-
 def get_price():
 	val = []
 	for n in range(len(all_items)):
@@ -19,6 +18,14 @@ def get_price():
 			if m == n:
 				val.append(all_items[n]["harga"])
 	return val	
+	
+
+def calcu(price):
+	result = []
+	for i in range(len(num)):
+		mult = num[i] * price[i]
+		result.append(mult)
+	return result
 	
 
 def casier(user_inp):
@@ -41,10 +48,10 @@ def casier(user_inp):
 				elif n in item_1:
 					usr_item.append(n)
 			
-			print(num)
-			print(usr_item)
 			price = get_price()
-			print(price)
+			rslt = calcu(price)
+			print(rslt)
+			
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
