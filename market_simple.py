@@ -27,6 +27,9 @@ def casier(user_inp):
 		print("your error : ", err)
 		
 	
-
-init = input("item : ")
+print("instruction!!")
+print("option: ")
+print("- all items")
+print("- promotional items")
+init = input("\nitem : ")
 casier(init)
