@@ -10,20 +10,23 @@ def casier(user_inp):
 	try:
 		if user_inp.lower() == "all items":
 			inp = input("input your order : ").lower()
-			for item in all_items:
+			for n in range(len(all_items)):
+				if inp == all_items[n]["item"]:
+					print("available with price : ",all_items[n]["harga"])
 				
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
+			for n in range(len(all_items)):
+				if inp == promotional_items[n]["item"]:
+					print("available with price : ",promotional_items[n]["harga"])
 		
 		else:
 			print("there is no such options !!!")
-	except err:
+	except NameError as err:
 		print("your error : ", err)
 		
 	
-		
-
 
 init = input("item : ")
 casier(init)
