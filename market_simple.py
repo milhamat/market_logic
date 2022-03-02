@@ -15,7 +15,7 @@ def get_price():
 	val = []
 	for n in range(len(all_items)):
 		for m in range(len(usr_item)):
-			if m == n:
+			if usr_item[m] == all_items[n]["item"]:
 				val.append(all_items[n]["harga"])
 	return val	
 	
@@ -23,7 +23,7 @@ def get_price():
 def calcu(price):
 	result = []
 	for i in range(len(num)):
-		mult = num[i] * price[i]
+		mult = int(num[i]) * int(price[i])
 		result.append(mult)
 	return result
 	
@@ -49,6 +49,8 @@ def casier(user_inp):
 					usr_item.append(n)
 			
 			price = get_price()
+			print(price)
+			print(num)
 			rslt = calcu(price)
 			print(rslt)
 			
