@@ -1,24 +1,28 @@
 import data as dt
 from dataExtract import extract
 
-all_itm1 = extract(dt.all_items, 1)
-all_itm2 = extract(dt.all_items, 2)
-promo1 = extract(dt.promotional_items, 1)
-promo2 = extract(dt.promotional_items, 2)
+all_itmB = extract(dt.all_items, 1)
+all_itmH = extract(dt.all_items, 2)
+promoB = extract(dt.promotional_items, 1)
+promoH = extract(dt.promotional_items, 2)
      
 item_1 = ['susu','daging','lampu','masker','apel']
 item_2 = ['susu', 'masker']                
 
 num = []
 usr_item = []
+totl_sem = []
 price = []
 
 def get_price():
 	val = []
-	for n in range(len(all_items)):
-		for m in range(len(usr_item)):
-			if usr_item[m] == all_items[n]["item"]:
-				val.append(all_items[n]["harga"])
+	idx = []
+	inverse_index = { element: index for index, element in enumerate(all_itmB) }
+	dat_tup =  [(index, inverse_index[element]) for index, element in enumerate(usr_item) if element in inverse_index]
+	for a, b in dat_tup:
+		idx.append(b)
+	for n in idx:
+		val.append(all_itmH[int(n)])
 	return val	
 	
 
@@ -87,6 +91,7 @@ def casier(user_inp):
 			
 			price = get_price()
 			rslt = calcu(price)
+			totl_sem = rslt
 			totl = total(rslt)
 			recipt(totl)
 				
