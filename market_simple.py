@@ -5,35 +5,25 @@ all_items = [{"item":"susu", "harga":50000}, {"item":"daging", "harga":20000},
 promotional_items = [{"item":"susu", "harga":50000},
                      {"item":"masker", "harga":25000}]
                      
- 
-def process_inp(word):
-	rm_spc_car = ","
-	
-	for char in rm_spc_car:
-		usr_inp = usr_inp.replace(char, "")
-		
-	return usr_inp
-                     
-
 
 def casier(user_inp):
 	num = []
 	usr_item = []
+	rm_spc_car = ","
 	
 	try:
 		if user_inp.lower() == "all items":
 			inp = input("input your order : ").lower()
-			for n in range(len(all_items)):
-				if inp == all_items[n]["item"]:
-					print("available with price : ",all_items[n]["harga"])
-				
+			for char in rm_spc_car:
+				inp = inp.replace(char, "")
+			print(inp)
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
-			for n in range(len(promotional_items)):
-				if inp == promotional_items[n]["item"]:
-					print("available with price : ",promotional_items[n]["harga"])
-		
+			for char in rm_spc_car:
+				inp = inp.replace(char, "")
+			print(inp)
+			
 		else:
 			print("there is no such options !!!")
 	except (NameError, ValueError) as err:
