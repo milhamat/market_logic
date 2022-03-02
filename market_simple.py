@@ -12,8 +12,10 @@ num = []
 usr_item = []
 
 def casier(user_inp):
-	
+	global num, usr_item
 	rm_spc_car = ","
+	num = []
+	usr_item = []
 	
 	try:
 		if user_inp.lower() == "all items":
