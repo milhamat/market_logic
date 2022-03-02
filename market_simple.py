@@ -1,9 +1,10 @@
-all_items = [{"item":"susu", "harga":50000}, {"item":"daging", "harga":20000},
-             {"item":"lampu", "harga":15000},{"item":"masker", "harga":25000},
-             {"item":"apel", "harga":30000}]
-             
-promotional_items = [{"item":"susu", "harga":50000},
-                     {"item":"masker", "harga":25000}]
+import data as dt
+from dataExtract import extract
+
+all_itm1 = extract(dt.all_items, 1)
+all_itm2 = extract(dt.all_items, 2)
+promo1 = extract(dt.promotional_items, 1)
+promo2 = extract(dt.promotional_items, 2)
      
 item_1 = ['susu','daging','lampu','masker','apel']
 item_2 = ['susu', 'masker']                

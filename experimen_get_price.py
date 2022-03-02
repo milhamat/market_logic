@@ -10,11 +10,18 @@ val = []
 #		if usr_item[m] == all_items[n]["item"]:
 #			val.append(all_items[n]["harga"])
 
-for idx, n in enumerate(all_items):
-	for m in range(len(usr_item)): 
-		if usr_item in n:
-			val.append(all_items[idx]["harga"])		
+item_1 = ['susu','daging','lampu','masker','apel']
+harga = [2000, 5000, 6000, 7000, 8000]
 
+res = []
+for idx, m in enumerate(item_1): 
+    for idx2, n in enumerate(usr_item): 
+        if m != n:
+            None
+        else:
+            res.append((idx, idx2)) 
+
+print(res)
 #print(val)
 #print(type(val))
 		
