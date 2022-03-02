@@ -12,12 +12,16 @@ def casier(user_inp):
 	try:
 		if user_inp.lower() == "all items":
 			inp = input("input your order : ").lower()
+			for item in all_items:
+				
 		
-		else if user_inp.lower() == "promotional items":
+		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
 		
 		else:
 			print("there is no such options !!!")
+	except err:
+		print("your error : ", err)
 		
 	
 		
