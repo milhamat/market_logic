@@ -21,7 +21,23 @@ for idx, m in enumerate(item_1):
         else:
             res.append((idx, idx2)) 
 
-print(res)
+#print(res)
 #print(val)
 #print(type(val))
 		
+def find_matching_index(list1, list2):
+
+    inverse_index = { element: index for index, element in enumerate(list1) }
+
+    return [(index, inverse_index[element])
+        for index, element in enumerate(list2) if element in inverse_index]
+    
+print(find_matching_index(item_1, usr_item))
+dat_tup = find_matching_index(item_1, usr_item)
+idx = []
+for a, b in dat_tup:
+	idx.append(b)
+print(idx)
+
+for n in idx:
+	print(harga[int(n)])
