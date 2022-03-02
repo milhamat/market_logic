@@ -10,6 +10,7 @@ item_2 = ['susu', 'masker']
 
 num = []
 usr_item = []
+price = []
 
 def get_price():
 	val = []
@@ -20,7 +21,7 @@ def get_price():
 	return val	
 	
 
-def calcu(price):
+def calcu(n):
 	result = []
 	for i in range(len(num)):
 		mult = int(num[i]) * int(price[i])
@@ -35,11 +36,20 @@ def total(calc):
 	return tot
 	
 
+def recipt(total):
+	print("Total harga: Rp.", total)
+	print("Detail: ")
+	for n in range(len(num)):
+		print(num[n] + ' ' + usr_item[n] + '-> Rp.',price[n])
+		
+	
+
 def casier(user_inp):
-	global num, usr_item
+	global num, usr_item, price
 	rm_spc_car = ","
 	num = []
 	usr_item = []
+	price = []
 	
 	try:
 		if user_inp.lower() == "all items":
@@ -62,6 +72,7 @@ def casier(user_inp):
 			print(rslt)
 			totl = total(rslt)
 			print(totl)
+			recipt(totl)
 			
 		
 		elif user_inp.lower() == "promotional items":
