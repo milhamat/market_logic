@@ -5,8 +5,21 @@ all_items = [{"item":"susu", "harga":50000}, {"item":"daging", "harga":20000},
 promotional_items = [{"item":"susu", "harga":50000},
                      {"item":"masker", "harga":25000}]
                      
+ 
+def process_inp(word):
+	rm_spc_car = ","
+	
+	for char in rm_spc_car:
+		usr_inp = usr_inp.replace(char, "")
+		
+	return usr_inp
+                     
+
 
 def casier(user_inp):
+	num = []
+	usr_item = []
+	
 	try:
 		if user_inp.lower() == "all items":
 			inp = input("input your order : ").lower()
