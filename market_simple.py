@@ -11,6 +11,15 @@ item_2 = ['susu', 'masker']
 num = []
 usr_item = []
 
+
+def get_price():
+	val = []
+	for n in all_items:
+		if usr_item in all_items[n]["item"]:
+			val.append(all_items[n]["harga"])
+	return val	
+	
+
 def casier(user_inp):
 	global num, usr_item
 	rm_spc_car = ","
@@ -33,6 +42,8 @@ def casier(user_inp):
 			
 			print(num)
 			print(usr_item)
+			price = get_price()
+			print(price)
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
