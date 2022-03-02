@@ -14,6 +14,15 @@ usr_item = []
 totl_sem = []
 price = []
 
+def display_menu():
+	print("All Items: ")
+	print(all_itmB)
+	print(all_itmH,'\n')
+	
+	print("Promotional Items: ")
+	print(promoB)
+	print(promoH)
+
 
 def get_price():
 	val = []
@@ -107,7 +116,8 @@ def casier(user_inp):
 		
 	
 print("           !!!----------instruction----------!!!")
-print("note: type 'all items' or 'promotion items' on the item input ")
+print("note: type 'all items' or 'promotion items' on the item input \n")
+display_menu()
 print("\noption: ")
 print("- all items")
 print("- promotional items")
