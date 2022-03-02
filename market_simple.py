@@ -14,9 +14,10 @@ usr_item = []
 
 def get_price():
 	val = []
-	for n in all_items:
-		if usr_item in all_items[n]["item"]:
-			val.append(all_items[n]["harga"])
+	for n in range(len(all_items)):
+		for m in range(len(usr_item)):
+			if m == n:
+				val.append(all_items[n]["harga"])
 	return val	
 	
 
