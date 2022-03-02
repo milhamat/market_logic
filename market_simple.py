@@ -45,16 +45,17 @@ def recipt(total):
 	print("\nTotal harga: Rp.", total)
 	print("Detail: ")
 	for n in range(len(num)):
-		print(num[n] + ' ' + usr_item[n] + '-> Rp.',price[n])
+		print(num[n] + ' ' + usr_item[n] + '-> Rp.',totl_sem[n])
 		
 	
 
 def casier(user_inp):
-	global num, usr_item, price
+	global num, usr_item, price, totl_sem
 	rm_spc_car = ","
 	num = []
 	usr_item = []
 	price = []
+	totl_sem = []
 	
 	try:
 		if user_inp.lower() == "all items":
@@ -71,7 +72,10 @@ def casier(user_inp):
 					usr_item.append(n)
 			
 			price = get_price()
+			print(price)
+			print(num)
 			rslt = calcu(price)
+			totl_sem = rslt
 			totl = total(rslt)
 			recipt(totl)
 			
