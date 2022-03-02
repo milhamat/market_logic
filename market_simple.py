@@ -8,9 +8,11 @@ promotional_items = [{"item":"susu", "harga":50000},
 item_1 = ['susu','daging','lampu','masker','apel']
 item_2 = ['susu', 'masker']                
 
+num = []
+usr_item = []
+
 def casier(user_inp):
-	num = []
-	usr_item = []
+	
 	rm_spc_car = ","
 	
 	try:
@@ -21,8 +23,14 @@ def casier(user_inp):
 				inp = inp.replace(char, "")
 				
 			order = inp.split()
-			print(order)
+			for n in order:
+				if n.isdigit():
+					num.append(n)
+				elif n in item_1:
+					usr_item.append(n)
 			
+			print(num)
+			print(usr_item)
 		
 		elif user_inp.lower() == "promotional items":
 			inp = input("input your order : ").lower()
