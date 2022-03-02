@@ -8,7 +8,7 @@ num = []
 usr_item = []
 
 inp = input("input word : ").split()
-lis = inp
+lis = inp #replace(",")
 #print(lis)
 
 for n in lis:
