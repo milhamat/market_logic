@@ -65,52 +65,35 @@ def casier(user_inp):
 	usr_item = []
 	price = []
 	totl_sem = []
+	dt_swc = []
 	
 	try:
 		if user_inp.lower() == "all items":
-			inp = input("input your order : ").lower()
-			
-			for char in rm_spc_car:
-				inp = inp.replace(char, "")
-				
-			order = inp.split()
-			for n in order:
-				if n.isdigit():
-					num.append(n)
-				elif n in item_1:
-					usr_item.append(n)
-			
-			price = get_price()
-			#print(price)
-			#print(num)
-			rslt = calcu(price)
-			totl_sem = rslt
-			totl = total(rslt)
-			recipt(totl)
-			
-		
+			dt_swc = item_1
 		elif user_inp.lower() == "promotional items":
-			inp = input("input your order : ").lower()
-			
-			for char in rm_spc_car:
-				inp = inp.replace(char, "")
-				
-			order = inp.split()
-			for n in order:
-				if n.isdigit():
-					num.append(n)
-				elif n in item_2:
-					usr_item.append(n)
-			
-			price = get_price()
-			rslt = calcu(price)
-			totl_sem = rslt
-			totl = total(rslt)
-			recipt(totl)
-				
-
+			dt_swc = item_2
 		else:
 			print("there is no such options !!!")
+			
+		inp = input("input your order : ").lower()
+			
+		for char in rm_spc_car:
+			inp = inp.replace(char, "")
+				
+		order = inp.split()
+		for n in order:
+			if n.isdigit():
+				num.append(n)
+			elif n in dt_swc:
+				usr_item.append(n)
+			
+		price = get_price()
+		rslt = calcu(price)
+		totl_sem = rslt
+		totl = total(rslt)
+		recipt(totl)
+			
+		
 	except (NameError, ValueError, IndexError) as err:
 		print("\nyour error : ", err)
 		
